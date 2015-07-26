@@ -1,0 +1,82 @@
+<html>
+    <head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.js"></script>
+
+		<link rel="stylesheet" href="/Content/Custom.css" />
+		<link href='http://fonts.googleapis.com/css?family=Original+Surfer' rel='stylesheet' type='text/css'>
+		
+        <link rel="stylesheet" type="text/css" href="/Content/semantic/dist/semantic.min.css">
+        <script src="/Content/semantic/dist/semantic.min.js"></script>
+
+	    <link rel="shortcut icon" href="../favicon.ico">
+	    <meta charset="utf-8" />
+	    <meta name="viewport" content="width=device-width" />
+	    <title>Wish Browser</title>
+    </head>
+    <body>
+
+		<div class="ui container">
+		    <h1 class="ui grey header">Wish Browser</h1>
+
+		    <button class="ui button yellow fluid" id="append-button">Add</button>
+
+		    <div class="divider hidden ui"></div>
+
+		    <div class="grid">
+		        <div class="grid-item">All sizing of items is handled by your CSS.</div>
+		        <div class="grid-item grid-item--width2">You can use Masonry with vanilla JS:</div>
+		        <div class="grid-item">Masonry works on a container grid element with a group of child items.</div>
+		    </div>
+		</div>
+
+		<script>
+
+		    $(document).ready(function () {
+		        var $grid = $('.grid').masonry({
+		            // options
+		            itemSelector: '.grid-item',
+		            columnWidth: 160,
+		            gutter: 10
+		        });
+
+		        $('#append-button').on('click', function () {
+		            // create new item elements
+		            var $items = $(getItem());
+
+		            // append items to grid
+		            $grid.append($items)
+						// add and lay out newly appended items
+						.masonry('appended', $items);
+		        });
+		    })
+
+		    function getItem() {
+
+		        var rString = randomString(Math.floor((Math.random() * 100) + 1), '0123456789 abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
+		        var classString = "grid-item";
+
+		        if (Math.floor((Math.random() * 4) + 1) == 1)
+		            classString = "grid-item";
+		        else if (Math.floor((Math.random() * 4) + 1) == 2)
+		            classString = "grid-item grid-item--width2";
+		        else if (Math.floor((Math.random() * 4) + 1) == 3)
+		            classString = "grid-item grid-item--width3";
+		        else
+		            classString = "grid-item grid-item--width4";
+
+		        return '<div class="' + classString + '">' + rString + '</div>';
+		    }
+
+		    function randomString(length, chars) {
+		        var result = '';
+		        for (var i = length; i > 0; --i) result += chars[Math.round(Math.random() * (chars.length - 1))];
+		        return result;
+		    }
+
+		</script>
+    </body>
+</html>

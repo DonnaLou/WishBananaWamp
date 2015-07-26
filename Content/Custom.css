@@ -1,0 +1,46 @@
+﻿
+
+h1{
+    color: grey !important;
+    font-family: Original Surfer !important;
+}
+
+h2{
+    color: grey !important;
+    font-family: Original Surfer !important;
+}
+
+.ui.container{
+    padding-top:50px;
+}
+
+#iwishTextArea{
+    border-style:dashed;
+    border-width:thick;
+    border-radius:5px;
+}
+
+.grid-item { 
+	padding:10px;
+	border-width: medium; 
+    border-color:grey;
+	margin-bottom:10px;
+    border-style:dashed; 
+	width: 25%; 
+}
+
+.grid-item--width2 { 
+	border-style:dotted; 
+	width: 50%; 
+}
+
+.grid-item--width3 { 
+	border-style:groove; 
+	width: 75%; 
+}
+
+.grid-item--width4 { 
+	border-style:double; 
+	width: 99%; 
+}
+

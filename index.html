@@ -1,0 +1,134 @@
+<html>
+    <head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.js"></script>
+
+		<link rel="stylesheet" href="/Content/Custom.css" />
+		<link href='http://fonts.googleapis.com/css?family=Original+Surfer' rel='stylesheet' type='text/css'>
+		
+        <link rel="stylesheet" type="text/css" href="/Content/semantic/dist/semantic.min.css">
+        <script src="/Content/semantic/dist/semantic.min.js"></script>
+
+	    <link rel="shortcut icon" href="../favicon.ico">
+	    <meta charset="utf-8" />
+	    <meta name="viewport" content="width=device-width" />
+	    <title>Wish Banana</title>
+    </head>
+    <body>
+
+		<div class="ui text container">
+		    <h1 class="ui center aligned header" style="font-size:72px;">Wish</h1>
+		    <div class="ui centered fluid large image">
+		        <img id="bananaImage" src="http://files.enjin.com.s3.amazonaws.com/265719/modules/forum/attachments/bananaAnimated_1423001776.png" />
+		    </div>
+		    <div class="ui hidden section divider"></div>
+		    <div class="ui four column stackable grid center aligned">
+		        <div class="column">
+		            <button class="fluid ui red button" id="playBtn" onclick="joingameClick()">Play</button>
+		        </div>
+		        <div class="column">
+		            <a href="wishBrowser.html" class="fluid ui orange button">Wish Browser</a>
+		        </div>
+		        <div class="column">
+		            <button class="fluid ui yellow button" id="ourStoryBtn">Our Story</button>
+		        </div>
+		        <div class="column">
+		            <button class="fluid ui olive button" id="creditBtn">Credits</button>
+		        </div>
+		    </div>
+
+		    <div class="ui small modal" id="credits">
+		        <i class="close icon"></i>
+		        <h3 class="ui grey header">Credits</h3>
+		        
+		        <div class="content">
+		            <div class="container">
+		                <img class="ui top aligned tiny rounded image" src="/Content/portraits/jonAnderson.jpg">
+		                <span>Jon Anderson</span>
+		            </div>
+		            <div class="ui divider"></div>
+		            <div class="container">
+		                <img class="ui top aligned tiny rounded image" src="/Content/portraits/kevinDuensing.jpg">
+		                <span>Kevin Duensing</span>
+		            </div>
+		            <div class="ui divider"></div>
+		            <div class="container">
+		                <img class="ui top aligned tiny rounded image" src="/Content/portraits/pewpew.png">
+		                <span>Donna Lou</span>
+		            </div>
+		        </div>
+		    </div>
+		    <!-- Start of Our Story popup: #ourstory -->
+		    <div class="ui small modal " id="ourstory">
+		        <i class="close icon"></i>
+		        <h3 class="ui grey header">Our Story</h3>
+		        <div class="content">
+		            <p>
+		                It was noon-thirty on a beautiful Tuesday. The banana-colored sunlight spilled across the peaceful cul-de-sac of Via Del Campo Ct. <br />
+		                Without warning, a determined fist belonging to none other than Joyce "Mother Effin'" Kuo arced down toward James Whiteside's flash frozen snack cake.
+		            </p>
+
+		            <p>"Wait!" shouted James, with unbridled fear and emotion. He snatched the vacuum packed morsel from the table and clutched it to his heart. <br /> "I want to eat this," he said.</p>
+
+		            <p>With a sigh, Joyce checked her swing at the last second. "What would happen," she pondered,  <br />"if two people were to smash each end of a snack cake at the same time?"</p>
+
+		            <p>
+		                Tim Sun (no relation to the star Earth orbits) gave one last look of loathing at his yogurt/vegetable Jacuzzi and offered his banana as a sacrifice.
+		                <br />He handed it to Canadian mystic Victor Pak, who enchanted the doomed fruit:
+		            </p>
+
+		            <p>"By the power vested in me by the Royal Canadian Mounties, the great moose spirit, and those mean-ass Canada geese, I hereby pronounce this fruit 'wish banana'."</p>
+
+		            <p>
+		                All was silent, save for the echoes of Victor's rumbling voice off the cafeteria tables. <br />
+		                Joyce, who was clearly feeling aggressive, sat on one side of the very nervous fruit. <br />
+		                Donna Lou, data rights champion, sat on the other. By this time, a sizable crowd had gathered.
+		            </p>
+
+		            <p>"ONE!", they shouted.</p>
+
+		            <p>"TWO!" Donna and Joyce swung their fists into the air.</p>
+
+		            <p>"THREE!", cried the masses. The brave women smashed their balled hands into the fruit.</p>
+
+		            <p>I wish I could tell you everyone survived. I wish I could tell you the peaceful cul-de-sac of Via del Campo Ct wasn't a vast crater. So I will.</p>
+
+		            <p>
+		                After everyone nursed their banana-related injuries, Donna Lou and Jon Anderson decided to make a game based on their experience that day. This is that game.
+		                Please play with reckless abandon, in honor of those six brave souls who got super sticky on that fateful day.
+		            </p>
+		            <p class="floated right">
+		                <b>Narrated by Kevin Duensing </b>
+		            </p>
+		        </div>
+		    </div>
+		</div>
+
+		<script type="text/javascript">
+
+		    $(document).ready(function () {
+		        $('#bananaImage').transition('tada');
+		    });
+
+		    $('#bananaImage').click(function () {
+		        $(this).transition('tada');
+		    });
+
+		    $('#ourStoryBtn').click(function () {
+		        $('#ourstory').modal('setting', 'transition', 'vertical flip').modal('show');
+		    });
+
+		    $('#creditBtn').click(function () {
+		        $('#credits').modal('setting', 'transition', 'vertical flip').modal('show');
+		    });
+
+		    function joingameClick() {
+		        alert("TODO call ajax to add user to queue.")
+		    }
+
+		</script>
+    </body>
+</html>
